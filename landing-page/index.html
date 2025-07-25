@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Tap Doctor - AI-Powered Healthcare for Uttarakhand</title>
+    <meta name="description" content="Quick access to trusted doctors in Dehradun and Haldwani with AI-powered symptom checker. Download the One-Tap Doctor app now.">
+    <meta name="keywords" content="doctor, healthcare, Uttarakhand, Dehradun, Haldwani, AI, symptom checker, telemedicine">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rajatwork.online/doctor">
+    <meta property="og:title" content="One-Tap Doctor - AI-Powered Healthcare for Uttarakhand">
+    <meta property="og:description" content="Quick access to trusted doctors in Dehradun and Haldwani with AI-powered symptom checker.">
+    <meta property="og:image" content="https://rajatwork.online/doctor/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rajatwork.online/doctor">
+    <meta property="twitter:title" content="One-Tap Doctor - AI-Powered Healthcare for Uttarakhand">
+    <meta property="twitter:description" content="Quick access to trusted doctors in Dehradun and Haldwani with AI-powered symptom checker.">
+    <meta property="twitter:image" content="https://rajatwork.online/doctor/og-image.jpg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1F2937;
+            background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #E5E7EB;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #22C55E;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #6B7280;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #22C55E;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #22C55E, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #6B7280;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #22C55E;
+            color: white;
+            box-shadow: 0 4px 14px rgba(34, 197, 94, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #16A34A;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #22C55E;
+            border: 2px solid #22C55E;
+        }
+
+        .btn-secondary:hover {
+            background: #22C55E;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* App Screenshots */
+        .screenshots {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 6rem;
+            flex-wrap: wrap;
+        }
+
+        .screenshot {
+            width: 250px;
+            height: 500px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screenshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #1F2937;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: #F8FAFC;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1F2937;
+        }
+
+        .feature-card p {
+            color: #6B7280;
+            line-height: 1.6;
+        }
+
+        /* Download Section */
+        .download {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #22C55E, #3B82F6);
+            color: white;
+            text-align: center;
+        }
+
+        .download h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .download p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Forms Section */
+        .forms {
+            padding: 80px 0;
+            background: #F8FAFC;
+        }
+
+        .forms h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #1F2937;
+        }
+
+        .forms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .form-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .form-card h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1F2937;
+        }
+
+        .form-card p {
+            color: #6B7280;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1F2937;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: #9CA3AF;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #22C55E;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .screenshots {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .forms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="container">
+            <div class="nav">
+                <a href="#" class="logo">🩺 One-Tap Doctor</a>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#download">Download</a></li>
+                    <li><a href="#forms">Get Involved</a></li>
+                    <li><a href="https://rajatwork.online">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Healthcare at Your Fingertips</h1>
+            <p>AI-powered symptom checker and instant access to trusted doctors in Dehradun and Haldwani. Get the right care, right when you need it.</p>
+            
+            <div class="cta-buttons">
+                <a href="#download" class="btn btn-primary">
+                    📱 Download App
+                </a>
+                <a href="#features" class="btn btn-secondary">
+                    ✨ Learn More
+                </a>
+            </div>
+
+            <!-- App Screenshots -->
+            <div class="screenshots">
+                <div class="screenshot">
+                    <div style="background: linear-gradient(135deg, #22C55E, #3B82F6); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; text-align: center; padding: 2rem;">
+                        <div>
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">🩺</div>
+                            <div>AI Symptom Checker</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">Instant health analysis</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="screenshot">
+                    <div style="background: linear-gradient(135deg, #3B82F6, #8B5CF6); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; text-align: center; padding: 2rem;">
+                        <div>
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">👨‍⚕️</div>
+                            <div>Find Doctors</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">Local healthcare professionals</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="screenshot">
+                    <div style="background: linear-gradient(135deg, #8B5CF6, #EC4899); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; text-align: center; padding: 2rem;">
+                        <div>
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">📞</div>
+                            <div>Book Consultations</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">Video & phone calls</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Why Choose One-Tap Doctor?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Analysis</h3>
+                    <p>Get instant symptom analysis and personalized doctor recommendations using advanced AI technology.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Local Healthcare Network</h3>
+                    <p>Access verified doctors in Dehradun and Haldwani with real-time availability and ratings.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Easy Booking</h3>
+                    <p>Book video consultations or phone calls with just one tap. No complicated processes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>24/7 Availability</h3>
+                    <p>AI symptom checker available round the clock for immediate health guidance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure & Private</h3>
+                    <p>Your health data is encrypted and secure. We prioritize your privacy above all.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Multi-Language Support</h3>
+                    <p>Available in English, Hindi, and Kumaoni for better accessibility across Uttarakhand.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download" id="download">
+        <div class="container">
+            <h2>Download One-Tap Doctor</h2>
+            <p>Get instant access to healthcare professionals in Uttarakhand</p>
+            <div class="download-buttons">
+                <a href="#" class="download-btn">
+                    🤖 Android APK
+                </a>
+                <a href="#" class="download-btn">
+                    🍎 iOS TestFlight
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section class="forms" id="forms">
+        <div class="container">
+            <h2>Get Involved</h2>
+            <div class="forms-grid">
+                <div class="form-card">
+                    <h3>🩺 Doctor Onboarding</h3>
+                    <p>Are you a healthcare professional in Dehradun or Haldwani? Join our network and help serve your community better.</p>
+                    <a href="https://forms.google.com/doctor-onboarding" class="btn btn-primary">Join as Doctor</a>
+                </div>
+                <div class="form-card">
+                    <h3>📝 Beta Feedback</h3>
+                    <p>Help us improve One-Tap Doctor by sharing your experience and suggestions. Your feedback shapes our future.</p>
+                    <a href="https://forms.google.com/beta-feedback" class="btn btn-secondary">Share Feedback</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://rajatwork.online">About Rajat</a>
+                <a href="mailto:contact@rajatwork.online">Contact</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+            </div>
+            <p>&copy; 2024 One-Tap Doctor. Made with ❤️ for the people of Uttarakhand.</p>
+            <p>Created by <a href="https://rajatwork.online" style="color: #22C55E;">Rajat Tripathi</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
